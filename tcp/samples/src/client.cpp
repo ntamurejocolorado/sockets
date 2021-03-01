@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<arpa/inet.h>
+#include <arpa/inet.h>
 #include <sys/socket.h>
 #include <iostream>
 #include <string.h>
@@ -35,21 +35,21 @@ int main()
             std::cerr << "Se ha desconectado" << std::endl;
             return 1;
         }
-        //buffer[bytesRecibidos] ='\0';
-        //printf("Me llegaron %d bytes con %s", bytesRecibidos, buffer);
+        
         std::cout <<"Received del servidor: "<< std::string(buffer,0,bytesRecibidos) <<std::endl;
-        //send(cliente,"Bienvenido a mi cliente.\n",26,0);
+       
         //Contestamos al servidor
         while(true)
         {
-            //string myString = "Hello World";
+            // C Programming
+            //char mensaje[1000]; 
+            //sscanf("%s", mensaje);
+            //send(cliente,mensaje,strlen(mensaje),0);
 
-            //send(myString.c_str(), myString.length());
-
-            char mensaje[1000];
-            scanf("%s", mensaje);
-
-            send(cliente,mensaje,strlen(mensaje),0);
+            // C++ Programming
+            std::string mensaje;
+            std::getline(std::cin, mensaje);
+            send(cliente,mensaje.c_str(), mensaje.size(),0);
         }   
         //send(cliente,mensaje,strlen(mensaje),0);
     }

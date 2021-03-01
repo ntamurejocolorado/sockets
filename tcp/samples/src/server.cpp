@@ -65,7 +65,7 @@ int main()
 
         //Contestamos al cliente
         //send(client, "Hola cliente\n", 13,0);
-        send(client,buffer,bytesRecibidos+1,0); //para enviar un echo al cliente
+        //send(client,buffer,bytesRecibidos+1,0); //para enviar un echo al cliente
         memset(buffer, 0, 4096);
     }
     
